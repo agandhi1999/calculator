@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>Calculator</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Calculator -->
+    <div class="calculator">
+        <!-- Screen -->
+        <div class="custom-scroll" id="screen"><span id="screen-text">0</span><span>&nbsp;</span></div>
+        <!-- First Row Buttons -->
+        <div id="first-row">
+            <div class="first-row-button button" id="plus" onclick="setOperator('add')"><i class="fas fa-plus"></i></div>
+            <div class="first-row-button button" id="minus" onclick="setOperator('subtract')"><i class="fas fa-minus"></i></div>
+            <div class="first-row-button button" id="multiply" onclick="setOperator('multiply')"><i class="fas fa-times"></i></div>
+            <div class="first-row-button button" id="divide" onclick="setOperator('divide')"><i class="fas fa-divide"></i></div>
+        </div>
+        <!-- Second Row Contains Numbers and "=" sign -->
+        <div id="second-row">
+            <div id="second-row-buttons">
+                <div id="seven-nine">
+                    <div class="second-row-button button" id="seven" onclick="showNumber(7)">7</div>
+                    <div class="second-row-button button" id="eight" onclick="showNumber(8)">8</div>
+                    <div class="second-row-button button" id="nine" onclick="showNumber(9)">9</div>
+                </div>
+                <div id="four-six">
+                    <div class="second-row-button button" id="four" onclick="showNumber(4)">4</div>
+                    <div class="second-row-button button" id="five" onclick="showNumber(5)">5</div>
+                    <div class="second-row-button button" id="six" onclick="showNumber(6)">6</div>
+                </div>
+                <div id="one-three">
+                    <div class="second-row-button button" id="one" onclick="showNumber(1)">1</div>
+                    <div class="second-row-button button" id="two" onclick="showNumber(2)">2</div>
+                    <div class="second-row-button button" id="three" onclick="showNumber(3)">3</div>
+                </div>
+                <div id="decimal-C">
+                    <div class="second-row-button button" id="decimal" onclick="showNumber('.')">.</div>
+                    <div class="second-row-button button" id="zero" onclick="showNumber(0)">0</div>
+                    <div class="second-row-button button" id="cancel" onclick="reset()">C</div>
+                </div>
+            </div>
+            <div id="equals-container">
+                <div class="button" id="equals" onclick="calculate()"><i class="fas fa-equals"></i></div>
+            </div>
+        </div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
